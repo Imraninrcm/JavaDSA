@@ -1,6 +1,7 @@
+package Variables;
 import java.util.Scanner;
 
-public class Test {
+public class Calculator {
    public static void main(String[] args){
     Scanner input = new Scanner(System.in);
     System.out.println("Enter 2 numbers and opration(+, -, *, /, %) to perform:");
