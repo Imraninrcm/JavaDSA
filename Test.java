@@ -1,27 +1,42 @@
 import java.util.Scanner;
+import java.lang.Math;
 
 public class Test {
    public static void main(String[] args){
     Scanner input = new Scanner(System.in);
-    System.out.println("Enter 2 numbers and opration(+, -, *, /, %) to perform:");
-    float a = input.nextFloat();
-    float b = input.nextFloat();
-    char op = input.next().charAt(0);
+        // number reversing
+    // System.out.print("Enter a number:");
+    // int n = input.nextInt();
+    // int reverseNo =  0;
+    // while(n>0){
+    //     int lastDigit = n%10;
+    //     reverseNo = (reverseNo*10) + lastDigit; 
+    //     n /= 10;
+    // }
+    // System.out.println(reverseNo);
+   System.out.print("Enter a number");
+    int n = input.nextInt();
+    boolean isPrime = false;
 
-    switch (op) {
-        case '+': System.out.println(a + " + " + b + " = " + (a+b));
-                  break;
-        case '-': System.out.println(a + " - " + b + " = " + (a-b));
-                  break;
-        case '*': System.out.println(a + " * " + b + " = " + (a*b));
-                  break;
-        case '/': System.out.println(a + " / " + b + " = " + (a/b));
-                  break;
-        case '%': System.out.println(a + " % " + b + " = " + (a%b));
-                  break;
-        default:System.out.println("Please select valid operation");
+    if(n >= 2){
+        for(int i=1;i<=Math.sqrt(n); i++){
+            if(n%i == 0){
+                isPrime = true;
+                break;
+            }else{
+                isPrime = false;
+            }
+        }
+    }else{
+        isPrime = false;
+    }
+   
+    if(isPrime){
+        System.out.println(n + " is a prime number");
+    }else{
+        System.out.println(n + " is not a prime number");
     }
 
-    input.close();
-}
+   input.close();
+   }
 }
